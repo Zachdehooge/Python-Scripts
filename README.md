@@ -1,2 +1,3 @@
 # Python-Scripts
-A collection of python scripts
+
+* Alias.py - A simple python script to automate adding an alias to the .bashrc file
