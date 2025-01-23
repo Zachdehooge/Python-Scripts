@@ -1,6 +1,7 @@
 import subprocess
 
-print(r"""
+print(
+    r"""
 ______________________________________________________________________      
     ___     __     ____ ___    _____
    /   |   / /    /  _//   |  / ___/
@@ -10,11 +11,12 @@ ______________________________________________________________________
                                     
 A simple python script to automate adding an alias to the .bashrc file
 ______________________________________________________________________
-""")
+"""
+)
 
 cmd = "grep -R 'bashrc' /home | head -1"
 
-subprocess.run(["grep -R 'bashrc' /home | head -1"], shell=True) 
+subprocess.run(["grep -R 'bashrc' /home | head -1"], shell=True)
 
 
 bashrc = input("\nCopy and paste the FULL PATH to the .bashrc file in /home above: ")
