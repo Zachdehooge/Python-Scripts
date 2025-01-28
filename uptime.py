@@ -1,17 +1,21 @@
 import requests
 import schedule
+import datetime
 
-# TODO: Output to log file with URL and date being the file name
+# TODO: Have name of site populate the top of the log file
+
+file_path = f"{datetime.datetime.now()}.log"
 
 def fetch_url(url):
     response = requests.get(url)
     status_code = response.status_code
     response_time = response.elapsed.total_seconds()
-   
-    if status_code == 200 and response_time < 0.5:
-        print(f'Status Code: {status_code}, Response Time: {response_time}')
-    else:
-        print(f'TOOK TOO LONG: Status Code: {status_code}, Response Time: {response_time}\n')
+
+    with open(file_path, 'a') as file:        
+        if status_code == 200 and response_time < 0.5:
+            file.write(f'Status Code: {status_code}, Response Time: {response_time}\n')
+        else:
+            file.write(f'TOOK TOO LONG: Status Code: {status_code}, Response Time: {response_time}\n')
 
 
 
