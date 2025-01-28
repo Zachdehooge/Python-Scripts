@@ -11,7 +11,7 @@ def fetch_url(url):
     if status_code == 200 and response_time < 0.5:
         print(f'Status Code: {status_code}, Response Time: {response_time}')
     else:
-        print(f'TOOK TOO LONG: Status Code: {status_code}, Response Time: {response_time}')
+        print(f'TOOK TOO LONG: Status Code: {status_code}, Response Time: {response_time}\n')
 
 
 
@@ -19,7 +19,7 @@ test = input("Enter a site to get metrics for: ")
 
 print(f"GETTING SITE DATA FOR: {test}")
 
-schedule.every(0.5).seconds.do(fetch_url, test)
+schedule.every(0.05).seconds.do(fetch_url, test)
 
 while True:
     schedule.run_pending()
