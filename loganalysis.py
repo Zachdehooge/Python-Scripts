@@ -1,9 +1,4 @@
 # A script that ingests server or application logs and extracts useful insights such as error counts, warnings, timestamps. It emails the report to the provided email in the args
-
-# TODO: Accept File Input
-# TODO: Count the number of log types and output that number into the report.log file
-
-
 # TODO: Later down the road offer the availability to have the log emailed
 
 
@@ -66,24 +61,13 @@ lines(log_file_path)
 """
 Expected Output:
 
-WARN - 19
-DEBUG - 26
-INFO - 27
-FATAL - 0
-ERROR - 28
-TRACE - 0
-Lines Scanned: 100
-_______________________
-Actual Output:
-
-Enter log file location: ./testdata.log
-WARN appears 19 time(s)
-DEBUG appears 26 time(s)
-INFO appears 27 time(s)
-FATAL appears 0 time(s)
-ERROR appears 28 time(s)
+WARN appears 1 time(s)
+DEBUG appears 135 time(s)
+INFO appears 143 time(s)
+FATAL appears 3 time(s)
+ERROR appears 15 time(s)
 TRACE appears 0 time(s)
 -----------------------
-Lines Scanned: 100
+Lines Scanned: 290
 
 """
